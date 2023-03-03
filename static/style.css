@@ -1,0 +1,18 @@
+.body{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+nav{
+    padding-left: 50px;
+}
+
+.titre{
+    background-image: url("baniere.jpg");
+    background-size: 100% auto;
+    height: 225px;
+    text-align: center;
+    color: darkblue;
+}
