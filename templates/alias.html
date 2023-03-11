@@ -1,37 +1,23 @@
-{# templates/alias.html #}
-
 {% extends "index.html" %}
 
 {% block content %}
-
 <section class="body">
     <h2>Liste des Alias :</h2>
     <table class="table table-striped">
         <thead>
             <tr id="myTH">
-                <th scope="col" data-info="Numéro de ligne de l'alias">#</th>
-                <th scope="col" data-info="Nom du serveur">Nom Serveur</th>
+                <th scope="col" data-info="Nom du serveur">Nom</th>
                 <th scope="col" data-info="Adresse IP:Port">IP:Port</th>
             </tr>
         </thead>
         <tbody>
+            {% for row in alias %}
             <tr>
-                <th scope="row">1</th>
-                <td>WebServer1_SSH </td>
-                <td>10.0.0.1:22</td>
+                <td>{{ row.alias }}</td>
+                <td>{{ row.ip_address }}:{{ row.port }}</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>WebServer2_SSH </td>
-                <td>10.0.0.1:22</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>WebServer3_SSH </td>
-                <td>10.0.0.1:22</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </section>
-
 {% endblock content %}

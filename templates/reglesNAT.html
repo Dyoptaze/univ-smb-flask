@@ -9,7 +9,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">IP Source</th>
                     <th scope="col">Port Source</th>
                     <th scope="col">IP Dest</th>
@@ -17,27 +16,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for row in nat %}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>10.0.0.1 </td>
-                    <td>80</td>
-                    <td>192.168.1.2</td>
-                    <td>8080</td>
+                    <td>{{ row.ipsource }}</td>
+                    <td>{{ row.portsource }}</td>
+                    <td>{{ row.ipdest }}</td>
+                    <td>{{ row.portdest }}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>10.0.0.1 </td>
-                    <td>80</td>
-                    <td>192.168.1.2</td>
-                    <td>8080</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>10.0.0.1 </td>
-                    <td>80</td>
-                    <td>192.168.1.2</td>
-                    <td>8080</td>
-                </tr>
+            {% endfor %}
             </tbody>
         </table>
     </section>
