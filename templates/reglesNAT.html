@@ -1,45 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
+{# templates/reglesNAT.html #}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TP3 - Technologies WEB</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='style.css') }} media="all">
-</head>
+{% extends "index.html" %}
 
-<body>
-    <header>
-        <div class="titre">
-            <h1>Gestion du firewall Linux Netfilter & Iptables</h1>
-        </div>
-    </header>
-    <div class="menu">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="accueil.html">Accueil <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="alias.html">Voir les Alias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reglesNAT.html">Règles du NAT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ajouterNAT.html">Ajouter des règles du NAT</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+{% block content %}
+
     <section class="body">
         <h2>Règles du NAT :</h2>
         <table class="table table-striped">
@@ -77,17 +41,6 @@
             </tbody>
         </table>
     </section>
-    <footer>
-        <div class="card text-center">
-            <div class="card-body">
-                <p class="card-text">Site réalisé dans le cadre du TP3 de Technologies du WEB</p>
-                <a href="accueil.html" class="btn btn-primary">Retour à l'accueil</a>
-            </div>
-            <div class="card-footer text-muted">
-                By Maria DUVERT
-            </div>
-        </div>
-    </footer>
-</body>
 
-</html>
+    {% endblock content %}
+    
