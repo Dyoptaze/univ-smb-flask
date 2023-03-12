@@ -1,21 +1,26 @@
 # save this as app.py
 from flask import Flask
 from flask import render_template
-import json
+from flask import json
+from flask import request
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def hello():
     return render_template("index.html")
 
+
 @app.route("/start")
 def start():
     return render_template("accueil.html")
 
+
 @app.route("/rules_filter")
 def rules_filter():
     return "rules_filter methode"
+
 
 @app.route("/rules_nat")
 def rules_nat():
@@ -23,9 +28,20 @@ def rules_nat():
         data = json.load(nat_file)
     return render_template("reglesNAT.html", nat=data)
 
-@app.route("/rules_nat_add")
+
+@app.route("/rules_nat_add", methods=['GET', 'POST'])
 def rules_nat_add():
-    return render_template("ajouterNAT.html")
+    if request.method == 'POST':
+        with open("static/nat.json", "r+") as nat_file:
+            file_data = json.load(nat_file)
+            data = {'ipsource': request.form['ipsource'], 'portsource': request.form['portsource'], 'ipdest': request.form['ipdest'], 'portdest': request.form['portdest']}
+            file_data.append(data)
+            nat_file.seek(0)
+            json.dump(file_data, nat_file, indent = 4)
+        msg = "La règle NAT a été ajoutée."
+        return render_template("ajouterNAT.html", message=msg)
+    else:
+        return render_template("ajouterNAT.html")
 
 @app.route("/alias")
 def alias():

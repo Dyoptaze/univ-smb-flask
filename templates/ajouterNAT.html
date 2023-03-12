@@ -6,22 +6,25 @@
 
 <section class="body">
     <h2>Ajouter des règles du NAT :</h2>
-    <form>
+
+    <p>{{ message }}</p>
+
+    <form method="post">
         <div class="form-group">
             <label for="exampleFormControlInput1">IP Source</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="10.0.0.1">
+            <input type="text" class="form-control" id="ipsource" placeholder="10.0.0.1" name="ipsource">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Port Source</label>
-            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="80">
+            <input type="text" class="form-control" id="portsource" placeholder="80" name="portsource">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">IP Dest</label>
-            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="192.168.1.2">
+            <input type="text" class="form-control" id="ipdest" placeholder="192.168.1.2" name="ipdest">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Port Dest</label>
-            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="8080">
+            <input type="text" class="form-control" id="portdest" placeholder="8080" name="portdest">
         </div>
         <div class="form-group">
             <input class="btn btn-primary" type="submit" value="Submit">
