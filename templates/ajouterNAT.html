@@ -9,21 +9,21 @@
 
     <p>{{ message }}</p>
 
-    <form method="post">
+    <form method="post" action="/rules_nat_add">
         <div class="form-group">
-            <label for="exampleFormControlInput1">IP Source</label>
+            <label for="ipsource">IP Source</label>
             <input type="text" class="form-control" id="ipsource" placeholder="10.0.0.1" name="ipsource">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">Port Source</label>
+            <label for="portsource">Port Source</label>
             <input type="text" class="form-control" id="portsource" placeholder="80" name="portsource">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">IP Dest</label>
+            <label for="ipdest">IP Dest</label>
             <input type="text" class="form-control" id="ipdest" placeholder="192.168.1.2" name="ipdest">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">Port Dest</label>
+            <label for="portdest">Port Dest</label>
             <input type="text" class="form-control" id="portdest" placeholder="8080" name="portdest">
         </div>
         <div class="form-group">

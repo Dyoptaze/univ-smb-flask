@@ -3,13 +3,24 @@ from flask import Flask
 from flask import render_template
 from flask import json
 from flask import request
+from flask import session
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    return render_template("index.html")
+    return render_template("connexion.html")
+
+
+@app.route("/connexion",  methods=['POST'])
+def connexion():
+    if request.form['Login'] == "test" and request.form['Password'] == "pass":  
+            #tester si mdp et login ok
+        return render_template("accueil.html")
+    else:
+        msg = "La connexion a échoué, veuillez réessayer."
+        return render_template("connexion.html", message = msg)
 
 
 @app.route("/start")

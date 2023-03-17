@@ -10,5 +10,17 @@
         "ipsource": "10.0.0.5",
         "portdest": "2564",
         "portsource": "80"
+    },
+    {
+        "ipdest": "srh",
+        "ipsource": "srth",
+        "portdest": "srj",
+        "portsource": "srth"
+    },
+    {
+        "ipdest": "srht",
+        "ipsource": "dth",
+        "portdest": "srth",
+        "portsource": "srth"
     }
 ]
