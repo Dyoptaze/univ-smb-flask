@@ -1,8 +1,14 @@
 [
     {
-        "ipdest": "10.0.1.2",
-        "ipsource": "80",
-        "portdest": "10.0.0.1",
+        "ipdest": "192.168.1.2",
+        "ipsource": "10.1.1.2",
+        "portdest": "8080",
+        "portsource": "80"
+    },
+    {
+        "ipdest": "192.148.2.50",
+        "ipsource": "10.0.0.5",
+        "portdest": "2564",
         "portsource": "80"
     }
 ]

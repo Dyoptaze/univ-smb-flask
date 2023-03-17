@@ -32,13 +32,16 @@ def rules_nat():
 @app.route("/rules_nat_add", methods=['GET', 'POST'])
 def rules_nat_add():
     if request.method == 'POST':
-        with open("static/nat.json", "r+") as nat_file:
-            file_data = json.load(nat_file)
-            data = {'ipsource': request.form['ipsource'], 'portsource': request.form['portsource'], 'ipdest': request.form['ipdest'], 'portdest': request.form['portdest']}
-            file_data.append(data)
-            nat_file.seek(0)
-            json.dump(file_data, nat_file, indent = 4)
-        msg = "La règle NAT a été ajoutée."
+        if not request.form['ipsource'] == "" and not request.form['portsource'] == "" and not request.form['ipdest'] == "" and not request.form['portdest'] == "":
+            with open("static/nat.json", "r+") as nat_file:
+                file_data = json.load(nat_file)
+                data = {'ipsource': request.form['ipsource'], 'portsource': request.form['portsource'], 'ipdest': request.form['ipdest'], 'portdest': request.form['portdest']}
+                file_data.append(data)
+                nat_file.seek(0)
+                json.dump(file_data, nat_file, indent = 4)
+            msg = "La règle NAT a été ajoutée."
+        else: 
+            msg = "La règle n'a pas été ajoutée, il faut saisir toutes les informations"
         return render_template("ajouterNAT.html", message=msg)
     else:
         return render_template("ajouterNAT.html")
